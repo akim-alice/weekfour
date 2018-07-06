@@ -12,8 +12,8 @@ def withdraw(amount, agent_number, pin)
  return 'Wrong PIN' unless @pin == pin 
 
   if (@balance < amount)
-   	{balance: @balance , time: '1538' , status: false}
-
+   	{balance: @balance , time: '1538' , status: false , reason: 'you do not have sufficient funds'}
+ 
   else
     @balance -= amount
     { transactioncode: 'WRXP45P', balance: @balance ,amount: 200 , time: '1447' , status: true }
